@@ -11,7 +11,7 @@ extension Units {
     
     @MainActor
     @ViewBuilder
-    func selector(unitSystem: UnitSystem, value: Binding<Double>) -> some View {
+    public func selector(unitSystem: UnitSystem, value: Binding<Double>) -> some View {
         MeasurementHorizontalSelector(
             value: value,
             numberOfWholeUnits: self.numberOfWholeUnits(unitSystem: unitSystem),
@@ -21,7 +21,7 @@ extension Units {
             tickValue: self.tickValue(unitSystem: unitSystem),
             convertionMultiplier: self.convertionMultiplier(unitSystem: unitSystem),
             highlightEvery: self.highlightEvery(unitSystem: unitSystem),
-            forWeight: self == .kilogramsOrPound,
+            forWeight: self == .kilogramsOrPounds,
             id: "\(self.rawValue)-\(unitSystem.rawValue)"
         )
     }

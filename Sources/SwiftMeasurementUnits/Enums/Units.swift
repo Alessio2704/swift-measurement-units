@@ -9,9 +9,9 @@ import Foundation
 
 public enum Units: String, Codable, CaseIterable {
     
-    case kilogramsOrPound
+    case kilogramsOrPounds
     case gramsOrOunces
-    case metersOrFeet
+    case metersOrFeets
     case centimetersOrInches
     case millimiters
     case minutes
@@ -24,11 +24,11 @@ public enum Units: String, Codable, CaseIterable {
         switch unitSystem {
         case .metric:
             switch self {
-            case .kilogramsOrPound:
+            case .kilogramsOrPounds:
                 return "kg"
             case .gramsOrOunces:
                 return "g"
-            case .metersOrFeet:
+            case .metersOrFeets:
                 return "m"
             case .centimetersOrInches:
                 return "cm"
@@ -47,11 +47,11 @@ public enum Units: String, Codable, CaseIterable {
             }
         case .us:
             switch self {
-            case .kilogramsOrPound:
+            case .kilogramsOrPounds:
                 return "lbs"
             case .gramsOrOunces:
                 return "oz"
-            case .metersOrFeet:
+            case .metersOrFeets:
                 return "feet"
             case .centimetersOrInches:
                 return "in"
@@ -75,11 +75,11 @@ public enum Units: String, Codable, CaseIterable {
         switch unitSystem {
         case .metric:
             switch self {
-            case .kilogramsOrPound:
+            case .kilogramsOrPounds:
                 return ""
             case .gramsOrOunces:
                 return ""
-            case .metersOrFeet:
+            case .metersOrFeets:
                 return "cm"
             case .centimetersOrInches:
                 return "mm"
@@ -98,11 +98,11 @@ public enum Units: String, Codable, CaseIterable {
             }
         case .us:
             switch self {
-            case .kilogramsOrPound:
+            case .kilogramsOrPounds:
                 return ""
             case .gramsOrOunces:
                 return ""
-            case .metersOrFeet:
+            case .metersOrFeets:
                 return "in"
             case .centimetersOrInches:
                 return ""
@@ -128,11 +128,11 @@ public enum Units: String, Codable, CaseIterable {
             return 1
         case .us:
             switch self {
-            case .kilogramsOrPound:
+            case .kilogramsOrPounds:
                 return 2.205
             case .gramsOrOunces:
                 return 1 / 28.3495
-            case .metersOrFeet:
+            case .metersOrFeets:
                 return 1 / 0.3048
             case .centimetersOrInches:
                 return 1 / 2.54
@@ -154,9 +154,9 @@ public enum Units: String, Codable, CaseIterable {
     
     public func numberOfWholeUnits(unitSystem: UnitSystem) -> Int {
         switch self {
-        case .kilogramsOrPound: return unitSystem == .us ? 2205 : 1000
+        case .kilogramsOrPounds: return unitSystem == .us ? 2205 : 1000
         case .gramsOrOunces: return unitSystem == .us ? 176 : 5000
-        case .metersOrFeet: return unitSystem == .us ? 10 : 3
+        case .metersOrFeets: return unitSystem == .us ? 10 : 3
         case .centimetersOrInches: return unitSystem == .us ? 79 : 200
         case .millimiters: return 200
         case .minutes: return 120
@@ -169,9 +169,9 @@ public enum Units: String, Codable, CaseIterable {
     
     public func numberOfSubunitsInWholeUnit(unitSystem: UnitSystem) -> Int {
         switch self {
-        case .kilogramsOrPound: return unitSystem == .us ? 1 : 4
+        case .kilogramsOrPounds: return unitSystem == .us ? 1 : 4
         case .gramsOrOunces: return unitSystem == .us ? 10 : 1
-        case .metersOrFeet: return unitSystem == .us ? 12 : 100
+        case .metersOrFeets: return unitSystem == .us ? 12 : 100
         case .centimetersOrInches: return 10
         case .millimiters: return 10
         case .minutes: return 60
@@ -184,9 +184,9 @@ public enum Units: String, Codable, CaseIterable {
     
     public func highlightEvery(unitSystem: UnitSystem) -> Int {
         switch self {
-        case .kilogramsOrPound: return unitSystem == .us ? 5 : 4
+        case .kilogramsOrPounds: return unitSystem == .us ? 5 : 4
         case .gramsOrOunces: return 5
-        case .metersOrFeet: return unitSystem == .us ? 3 : 5
+        case .metersOrFeets: return unitSystem == .us ? 3 : 5
         case .centimetersOrInches: return 5
         case .millimiters: return 5
         case .minutes: return 5
@@ -199,9 +199,9 @@ public enum Units: String, Codable, CaseIterable {
     
     public func tickValue(unitSystem: UnitSystem) -> Double {
         switch self {
-        case .kilogramsOrPound: return unitSystem == .us ? 1 : 0.25
+        case .kilogramsOrPounds: return unitSystem == .us ? 1 : 0.25
         case .gramsOrOunces: return unitSystem == .us ? 0.1 : 1
-        case .metersOrFeet: return unitSystem == .us ? 1 / 12 : 0.01
+        case .metersOrFeets: return unitSystem == .us ? 1 / 12 : 0.01
         case .centimetersOrInches: return 0.1
         case .millimiters: return 0.1
         case .minutes: return 1 / 60
@@ -219,11 +219,11 @@ extension Units {
     
     public var label: LocalizedStringResource {
         switch self {
-        case .kilogramsOrPound:
+        case .kilogramsOrPounds:
             return "kg / Lbs"
         case .gramsOrOunces:
             return "grams / ounces"
-        case .metersOrFeet:
+        case .metersOrFeets:
             return "m / ft"
         case .centimetersOrInches:
             return "cm / in"
