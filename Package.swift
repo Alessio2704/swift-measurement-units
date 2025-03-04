@@ -5,17 +5,20 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftMeasurementUnits",
+    platforms: [.iOS(.v17)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "SwiftMeasurementUnits",
             targets: ["SwiftMeasurementUnits"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/Alessio2704/HapticManager.git", branch: "main"),
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SwiftMeasurementUnits"),
+            name: "SwiftMeasurementUnits",
+            dependencies: ["HapticManager"]
+        ),
         .testTarget(
             name: "SwiftMeasurementUnitsTests",
             dependencies: ["SwiftMeasurementUnits"]

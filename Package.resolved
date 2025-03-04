@@ -1,0 +1,15 @@
+{
+  "originHash" : "75ad7f856a54599a645be3fe68918953783f4a2c43737a6c22cad4c17162b2d9",
+  "pins" : [
+    {
+      "identity" : "hapticmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alessio2704/HapticManager.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ca1ed0afb48e08633957532e83cd5510d6f0cda7"
+      }
+    }
+  ],
+  "version" : 3
+}
